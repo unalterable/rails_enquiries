@@ -6,8 +6,8 @@ require 'rails_enquiries/version'
 Gem::Specification.new do |spec|
   spec.name          = "rails_enquiries"
   spec.version       = RailsEnquiries::VERSION
-  spec.authors       = ["unalterable"]
-  spec.email         = ["diamond.oliver@gmail.com"]
+  spec.authors       = ["Oliver Diamond", "Apoorva Saxena", "Marlon Date-Chong", "Kasia Puwalowsko"]
+  spec.email         = ["diamond.oliver@gmail.com", "apsaxena24@gail.com", "mdatechong@gmail.com", "kpuwal@gmail.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
