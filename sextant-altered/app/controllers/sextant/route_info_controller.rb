@@ -1,5 +1,6 @@
 module Sextant
   class RouteInfoController < Sextant::ApplicationController
+    require 'method_source'
     layout 'sextant/application'
 
 
@@ -8,7 +9,6 @@ module Sextant
       route = Sextant.format_routes[id][:reqs].split('#')
       classname, methodname = route
       classname = eval((classname + '_controller').classify)
-      require 'method_source'
       file, line = classname.instance_method(methodname.to_sym).source_location
       @routeinfo = "Method '##{methodname}' is defined in #{file}, line #{line}"
       file = classname.instance_method(methodname.to_sym).source
@@ -18,4 +18,3 @@ module Sextant
 
   end
 end
-
