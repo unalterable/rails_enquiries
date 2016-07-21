@@ -54,4 +54,4 @@ group :test do
 end
 
 
-gem 'sextant', :path => '../sextant'
+gem 'sextant', :path => '../sextant-altered'

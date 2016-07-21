@@ -1,5 +1,5 @@
 PATH
-  remote: ../sextant
+  remote: ../sextant-altered
   specs:
     sextant (0.2.4)
       rails (>= 3.2)
