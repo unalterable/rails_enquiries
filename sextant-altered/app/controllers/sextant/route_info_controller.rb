@@ -5,7 +5,8 @@ module Sextant
 
 
     def index
-      route = Sextant.format_routes[params[:id].to_i || 0][:reqs]
+      redirect_to('/rails_enquiries/routes') unless !!params[:route_id]
+      route = Sextant.format_routes[params[:route_id].to_i][:reqs]
       controller_class, controller_method, file, line = find_controller(route)
 
       @controller_info = "Controller method '##{controller_method}' is defined in #{file}, line #{line}"
