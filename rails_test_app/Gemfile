@@ -47,8 +47,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+# For Testing (of rails_enquiries)
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
 end
+
+
+gem 'sextant', :path => '../sextant'
