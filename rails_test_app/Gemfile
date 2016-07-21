@@ -53,5 +53,5 @@ group :test do
   gem 'capybara'
 end
 
-
+# Testing altered gem
 gem 'sextant', :path => '../sextant-altered'
