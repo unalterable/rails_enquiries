@@ -1,6 +1,7 @@
 module Sextant
   class RoutesController < Sextant::ApplicationController
     layout 'sextant/application'
+    require 'active_support/inflector'
 
     before_filter :require_local!
 
@@ -18,7 +19,5 @@ module Sextant
     def local_request?
       Rails.application.config.consider_all_requests_local || request.local?
     end
-
   end
 end
-

@@ -3,3 +3,12 @@ Route Info
 </h2>
 
 <%= render :partial => 'code_snippet', :locals => { :code_source => @file, :code_info => @controller_info }%>
+
+<h2>Database Tables</h2>
+<% @info.each do |table| %>
+<% table.each do |info| %>
+<p>
+  <%= info %>
+</p>
+<% end %>
+<% end %>
