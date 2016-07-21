@@ -4,6 +4,7 @@ module ActionDispatch::Routing
     # generate all needed routes for sextant
     def mount_sextant
       get "rails_enquiries/routes" => "sextant/routes#index"
+      get 'rails_enquiries/route_info' => 'sextant/route_info#index'
       # mount Sextant::Engine => "/sextant", :as => "sextant_engine"
     end
   end

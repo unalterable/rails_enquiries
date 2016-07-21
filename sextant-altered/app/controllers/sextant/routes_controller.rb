@@ -5,7 +5,7 @@ module Sextant
     before_filter :require_local!
 
     def index
-      @routes = Sextant.format_routes
+      @routes = Sextant.format_routes.each_with_index.map{ |x, i| x[:id] = i; x }
     end
 
     private
