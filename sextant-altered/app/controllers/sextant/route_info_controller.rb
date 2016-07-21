@@ -5,16 +5,25 @@ module Sextant
 
 
     def index
-      id = params[:id].to_i || 0
-      route = Sextant.format_routes[id][:reqs].split('#')
-      classname, methodname = route
-      classname = eval((classname + '_controller').classify)
-      file, line = classname.instance_method(methodname.to_sym).source_location
-      @routeinfo = "Method '##{methodname}' is defined in #{file}, line #{line}"
-      file = classname.instance_method(methodname.to_sym).source
-      @file = file.gsub("\n", "<br>").html_safe
+      route = Sextant.format_routes[params[:id].to_i || 0][:reqs]
+      controller_class, controller_method, file, line = find_controller(route)
+
+      @controller_info = "Controller method '##{controller_method}' is defined in #{file}, line #{line}"
+      @file = get_source_code(controller_class, controller_method)
     end
 
+     private
+
+     def find_controller (route)
+       controller, controller_method = route.split('#')
+       controller_class = eval((controller + '_controller').classify)
+       file, line = controller_class.instance_method(controller_method.to_sym).source_location
+       [controller_class, controller_method, file, line]
+     end
+
+     def get_source_code(klass, method)
+       klass.instance_method(method.to_sym).source.gsub("\n", "<br>").html_safe
+     end
 
   end
 end
