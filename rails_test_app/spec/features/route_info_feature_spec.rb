@@ -8,4 +8,10 @@ feature 'Route Info page' do
     source_code = "def "
     expect(page).to have_content(source_code)
   end
+
+  scenario 'displays databse info' do
+    expect(page).to have_content('Database Tables')
+    expect(page).to have_content('USERS')
+  end
+
 end
