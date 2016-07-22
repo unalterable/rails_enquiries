@@ -1,8 +1,10 @@
 <h1>
-Route Info
+Route Info: <%= @route[:name] %>
 </h1>
-
-<%= @route %>
+<ul>
+<li><strong>Method:</strong> <%= @route[:verb] %></li>
+<li><strong>Path:</strong> <%= @route[:path] %></li>
+</ul>
 
 <h2>
 Controller Code
@@ -20,7 +22,7 @@ Database Tables
 .database_table {
   display: inline-block;
   vertical-align: top;
-  width: 100px;
+  width: 300px;
 }
 </style>
 <div class='database_tables'>
