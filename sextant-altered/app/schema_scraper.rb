@@ -16,10 +16,7 @@ class Schema_scraper
       create_table_in_line?(line)
       @current_table << line[1].gsub(/[^0-9a-z]/,' ').strip if @table
     end
-    @table_contents.delete_if{ |a| a.length == 0}
-    @table_contents.each do |array|
-      array[0].capitalize
-    end
+    prepare_table_contents(@table_contents)
     @table_contents
   end
 
@@ -32,8 +29,16 @@ class Schema_scraper
   def end_in_line?(line_text)
     if line_text.include?('end')
       @table = false
+      @current_table << "MODELLING"
       @table_contents << @current_table
       @current_table = []
+    end
+  end
+
+  def prepare_table_contents(array)
+    array.delete_if{ |a| a.length == 1}
+    array.each do |a|
+      a[0].capitalize!
     end
   end
 end
