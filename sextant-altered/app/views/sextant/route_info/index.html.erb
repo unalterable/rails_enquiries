@@ -1,5 +1,33 @@
-<h2>
+<h1>
 Route Info
+</h1>
+
+<%= @route %>
+
+<h2>
+Controller Code
 </h2>
 
 <%= render :partial => 'code_snippet', :locals => { :code_source => @file, :code_info => @controller_info }%>
+
+<h2>
+Database Tables
+</h2>
+<style>
+.database_table {
+  display: inline-block;
+
+}
+</style>
+<% @info.each do |table| %>
+  <div class='database_table'>
+    <h3>
+    <%= table[0] %>
+    </h3>
+    <% table[1..-1].each do |info| %>
+      <p>
+        <%= info %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
