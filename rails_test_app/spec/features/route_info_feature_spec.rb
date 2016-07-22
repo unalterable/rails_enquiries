@@ -11,7 +11,7 @@ feature 'Route Info page' do
 
   scenario 'displays databse info' do
     expect(page).to have_content('Database Tables')
-    expect(page).to have_content('USERS')
+    expect(page).to have_content('Users')
   end
 
 end

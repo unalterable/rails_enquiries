@@ -1,7 +1,28 @@
+<style>
+.database_tables {
+  display: block;
+}
+.database_table {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+}
+li {
+  font-size: 17px;
+  padding: 10px;
+}
+h2{
+  margin-top: 50px;
+}
+</style>
 <h1>
-Route Info: <%= @route[:name] %>
+Global Rail Enquiries
 </h1>
+<h2>
+Route Info:
+</h2>
 <ul>
+<li><strong>Name:</strong> <%= @route[:name] %></li>
 <li><strong>Method:</strong> <%= @route[:verb] %></li>
 <li><strong>Path:</strong> <%= @route[:path] %></li>
 </ul>
@@ -15,16 +36,6 @@ Controller Code
 <h2>
 Database Tables
 </h2>
-<style>
-.database_tables {
-  display: block;
-}
-.database_table {
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-}
-</style>
 <div class='database_tables'>
 <% @info.each do |table| %>
 <div class='database_table'>

@@ -1,17 +1,16 @@
 module Sextant
   class RouteInfoController < Sextant::ApplicationController
     require 'method_source'
-    require_relative '../../schema_scraper.rb'
+    require_relative '../../../lib/schema_scraper.rb'
     layout 'sextant/application'
 
 
     def index
-      @route = Sextant.format_routes[params[:id].to_i || 0]
+      @route = Sextant.format_routes[params[:route_id].to_i]
       controller_class, controller_method, file, line = find_controller(@route[:reqs])
       @controller_info = "Controller method '##{controller_method}' is defined in #{file}, line #{line}"
       @file = get_source_code(controller_class, controller_method)
       @info = database_info
-      p @info
     end
 
     private
@@ -43,5 +42,6 @@ module Sextant
         end
       end
     end
+
   end
 end
