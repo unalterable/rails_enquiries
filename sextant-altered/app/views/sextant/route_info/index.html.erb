@@ -14,20 +14,26 @@ Controller Code
 Database Tables
 </h2>
 <style>
+.database_tables {
+  display: block;
+}
 .database_table {
   display: inline-block;
-
+  vertical-align: top;
+  width: 100px;
 }
 </style>
+<div class='database_tables'>
 <% @info.each do |table| %>
-  <div class='database_table'>
-    <h3>
-    <%= table[0] %>
-    </h3>
-    <% table[1..-1].each do |info| %>
-      <p>
-        <%= info %>
-      </p>
-    <% end %>
-  </div>
-<% end %>
+<div class='database_table'>
+      <h3>
+      <%= table[0] %>
+      </h3>
+      <% table[1..-1].each do |info| %>
+        <p>
+          <%= info %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
