@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/unalterable/rails_enquiries.png?label=ready&title=Ready)](https://waffle.io/unalterable/rails_enquiries)
 # rails_enquiries`
 
 
